@@ -6,11 +6,20 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/container/layout.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterDetailComponent } from './components/character-detail/character-detail.component';
-import { MatButtonModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatListModule, MatProgressSpinnerModule,
+  MatRippleModule
+} from '@angular/material';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpErrorInterceptor } from './services/http-interceptor';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 // Modules from angular material
 const MaterialModules = [
@@ -19,7 +28,9 @@ const MaterialModules = [
   MatButtonModule,
   MatDialogModule,
   MatIconModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatRippleModule,
+  MatProgressSpinnerModule,
 ];
 @NgModule({
   declarations: [
@@ -27,7 +38,8 @@ const MaterialModules = [
     LayoutComponent,
     CharacterListComponent,
     CharacterDetailComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    SpinnerComponent
   ],
   entryComponents: [
     ErrorDialogComponent

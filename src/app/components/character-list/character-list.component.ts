@@ -11,9 +11,7 @@ export class CharacterListComponent implements OnInit {
   @Output() clickCharName = new EventEmitter();
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.list);
-  }
+  ngOnInit() { }
 
   getCharDetails(url) {
     this.clickCharName.emit(url);

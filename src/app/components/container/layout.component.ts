@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import CharactersJson from '../../../assets/characters.json';
 import { CharacterList, FilmInfo } from 'src/app/models/index.js';
 import { ApiService } from '../../services/index.service';
-import { mergeMap } from 'rxjs/operators';
+import { finalize, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-layout',
@@ -12,6 +12,7 @@ import { mergeMap } from 'rxjs/operators';
 export class LayoutComponent implements OnInit {
   characters: CharacterList = CharactersJson;
   films: FilmInfo[];
+  displaySpinner: boolean;
   constructor(
     private service: ApiService
   ) { }
@@ -19,9 +20,11 @@ export class LayoutComponent implements OnInit {
   ngOnInit() { }
 
   onClickCharName(payload) {
+    this.displaySpinner = true;
     this.service.getCharacterDetails(payload)
       .pipe(
-        mergeMap(person => this.service.getFilmList(person.films))
+        mergeMap(person => this.service.getFilmList(person.films)),
+        finalize(() => this.displaySpinner = false)
       )
       .subscribe(res => this.films = res);
   }
