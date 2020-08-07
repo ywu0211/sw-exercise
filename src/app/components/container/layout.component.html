@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="header">
+    <h1>Star Wars</h1>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="content">
+    <app-character-list
+      class="list"
+      [list]="characters"
+      (clickCharName)="onClickCharName($event)"
+    >
+    </app-character-list>
+    <app-character-detail
+      class="detail"
+      [films]="films"
+    ></app-character-detail>
+  </div>
+</div>
+
+

@@ -1,0 +1,28 @@
+<div *ngIf="!films">
+  <p class="message">Please select one of the characters from the left</p>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let film of films">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon color="primary">local_movies</mat-icon>&nbsp;{{ film?.title }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <span class="film-info">
+      <mat-icon color="accent">account_box</mat-icon>
+      Director: {{ film?.director }}</span>
+      <span class="film-info">
+      <mat-icon color="accent">account_circle</mat-icon>
+      Producer: {{ film?.producer }}</span>
+      <span class="film-info">
+      <mat-icon color="accent">date_range</mat-icon>
+      Release Data: {{ film?.release_date | date: 'fullDate' }}
+      </span>
+      <span class="film-info">
+      <mat-icon color="accent">video_label</mat-icon>
+      Episode: {{ film?.episode_id }}</span>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
