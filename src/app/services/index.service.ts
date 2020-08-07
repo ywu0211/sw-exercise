@@ -22,6 +22,7 @@ export class ApiService {
   }
 
   getFilmDetail(link: string): Observable<FilmInfo> {
-    return this.http.get<FilmInfo>(link);
+    const url = link.replace(/^http:\/\//i, 'https://');
+    return this.http.get<FilmInfo>(url);
   }
 }
