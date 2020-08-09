@@ -1,8 +1,17 @@
 :host {
   display: flex;
   margin: 0 auto 15px;
-  width: 65vw;
-  height: 90vh;
-  background: rgba(59,59,59,0.95);
+  width: 75vw;
+  height: 95vh;
+  background: rgba(59,59,59,0.85);
   min-height: 480px;
+}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
 }
