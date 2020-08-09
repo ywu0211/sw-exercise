@@ -1,16 +1,23 @@
+:host {
+  display: flex;
+  flex: 1;
+}
 h1 {
   color: #FFE81F;
   text-align: center;
 }
 
 .container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   margin: 0 auto;
   padding: 10px;
 }
 
 .content {
   display: flex;
-  height: 500px;
+  flex: 1;
   .list {
     flex: 2;
   }

@@ -1,6 +1,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.mat-app-background {
+  background-image: url("assets/star.jpg");
+}
+
 .mat-expansion-panel-body {
   background: #555555;
   padding-top: 4px;
