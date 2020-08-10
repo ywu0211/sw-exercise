@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/container/layout.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
@@ -47,7 +45,6 @@ const MaterialModules = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
     ...MaterialModules
   ],
